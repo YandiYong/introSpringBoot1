@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/apio/ToDoEntity")
+@RequestMapping("/api/ToDoEntity")
 public class ToDoController {
     @Autowired
     private ToDoServiceImp toDoService;
@@ -22,7 +22,7 @@ public class ToDoController {
     public  void save(@RequestBody ToDoEntity toDo){
         toDoService.saveToDo(toDo);
     }
-    @GetMapping("{/id}")
+    @GetMapping("{id}")
     public  ToDoEntity findOne(@PathVariable Long id){
         return toDoService.getToDoById(id);
     }
